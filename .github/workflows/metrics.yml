@@ -1,7 +1,7 @@
 name: Metrics
 on:
   schedule: 
-    - cron: "0 0 * * *"   # Corre cada día a medianoche UTC
+    - cron: "0 */12 * * *"   # Corre cada día cada 12 hrs UTC
   workflow_dispatch:      # Permite correrlo manualmente
 
 jobs:
