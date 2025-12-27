@@ -1,8 +1,8 @@
 name: Metrics
 on:
-  schedule: 
-    - cron: "0 */12 * * *"   # Corre cada día cada 12 hrs UTC
-  workflow_dispatch:      # Permite correrlo manualmente
+  schedule:
+    - cron: "0 */12 * * *"  # Corre cada 12 horas
+  workflow_dispatch:
 
 jobs:
   github-metrics:
@@ -12,9 +12,8 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: josesreyes
-          template: classic
-          base: header, activity, community, repositories, metadata
+          template: terminal
+          base: header, repositories
           config_timezone: America/Mexico_City
           plugin_languages: yes
-          plugin_isocalendar: yes
-          plugin_stars: yes
+          plugin_languages_limit: 6
